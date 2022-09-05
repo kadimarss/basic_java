@@ -9,6 +9,6 @@ public class Ex5 {
 
         int secondInYear = days * hours *minutes * seconds;
 
-        System.out.println("There are " + secondInYear + " seconds in a year");
+        System.out.println("There are " + secondInYear + " seconds in a year.");
     }
 }
