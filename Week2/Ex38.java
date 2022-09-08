@@ -14,6 +14,6 @@ public class Ex38 {
         }
     }
     public static void printText() {
-        System.out.println("in the beginning");
+        System.out.println("In the beginning there were the swamp, the hoe and Java.");
     }
 }
