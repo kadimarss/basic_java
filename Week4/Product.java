@@ -11,6 +11,7 @@ public class Product {
         this.quantity = quantity;
     }
 
+
     public void printProduct() {
         System.out.println(this.name + ", " + "price " + this.price + ", " + this.quantity + " pcs");
     }
