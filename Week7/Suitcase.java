@@ -12,10 +12,7 @@ public class Suitcase {
     }
 
     public void addThing(Thing thing){
-        int weightCurrent = 0;
-        for (Thing currentThing :this.things) {
-            weightCurrent += currentThing.getWeight();
-        }
+        int weightCurrent = this.totalWeight();
         if(weightCurrent + thing.getWeight() <= this.weightLimit) {
             this.things.add(thing);
         }
@@ -23,23 +20,26 @@ public class Suitcase {
 
     @Override
     public String toString() {
-        int weightCurrent = 0;
-        for (Thing currentThing :this.things) {
-            weightCurrent += currentThing.getWeight();
+        String languageControl = "";
+        if(this.things.size() == 0) {
+            languageControl =  "empty";
+        } else if (this.things.size() == 1) {
+            languageControl = this.things.size() + " thing";
+        } else {
+            languageControl = this.things.size() + " things";
         }
-        if(weightCurrent == 0){
-            return "Empty" + weightCurrent + " kg)";
-        }
-        return this.things.size() + " things (" + weightCurrent + " kg)";
+        return languageControl + " (" + this.totalWeight() + " kg)";
     }
+
     public void printThings(){
-        for ( Thing thing : this.things){
+        for (Thing thing :this.things) {
             System.out.println(thing);
         }
     }
-    public int totalWeight() {
+
+    public int totalWeight(){
         int weightCurrent = 0;
-        for (Thing currentThing : this.things) {
+        for (Thing currentThing :this.things) {
             weightCurrent += currentThing.getWeight();
         }
         return weightCurrent;
