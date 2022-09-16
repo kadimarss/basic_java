@@ -1,25 +1,15 @@
 package Week8;
+
 public class Ex12 {
     public static void main(String[] args) {
-        Storehouse store = new Storehouse();
-        store.addProduct("milk", 3, 10);
-        store.addProduct("coffee", 5, 7);
-        store.addProduct("coffee", 5, 1);
+        ShoppingBasket basket = new ShoppingBasket();
+        basket.add("milk", 3);
+        basket.add("buttermilk", 2);
+        basket.add("cheese", 5);
+        System.out.println("basket price: " + basket.price());
+        basket.add("computer", 899);
+        System.out.println("basket price: " + basket.price());
 
-        System.out.println("prices:");
-        System.out.println("milk:  " + store.price("milk"));
-        System.out.println("coffee:  " + store.price("coffee"));
-        System.out.println("sugar: " + store.price("sugar"));
-        System.out.println("stocks:");
-        System.out.println("coffee:  " + store.stock("coffee"));
-        System.out.println("sugar: " + store.stock("sugar"));
-
-        System.out.println("we take a coffee " + store.take("coffee"));
-        System.out.println("we take a coffee " + store.take("coffee"));
-        System.out.println("we take sugar " + store.take("sugar"));
-
-        System.out.println("stocks:");
-        System.out.println("coffee:  " + store.stock("coffee"));
-        System.out.println("sugar: " + store.stock("sugar"));
+        basket.print();
     }
 }
