@@ -27,6 +27,21 @@ public class Suitcase {
         for (Thing currentThing :this.things) {
             weightCurrent += currentThing.getWeight();
         }
+        if(weightCurrent == 0){
+            return "Empty" + weightCurrent + " kg)";
+        }
         return this.things.size() + " things (" + weightCurrent + " kg)";
+    }
+    public void printThings(){
+        for ( Thing thing : this.things){
+            System.out.println(thing);
+        }
+    }
+    public int totalWeight() {
+        int weightCurrent = 0;
+        for (Thing currentThing : this.things) {
+            weightCurrent += currentThing.getWeight();
+        }
+        return weightCurrent;
     }
 }
