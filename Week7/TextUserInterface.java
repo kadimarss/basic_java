@@ -1,8 +1,12 @@
+
 package Week7;
+
+import java.util.Dictionary;
 import java.util.Scanner;
 public class TextUserInterface {
     private Dictionary dictionary;
     private Scanner reader;
+
     public TextUserInterface(Scanner reader, Dictionary dictionary) {
         this.dictionary = dictionary;
         this.reader = reader;
@@ -11,32 +15,36 @@ public class TextUserInterface {
         this.dictionary.add("quit", "quit the text user interface");
     }
 
-    public void start(){
+    public void start() {
         System.out.println("Statement: ");
         System.out.println("quit - " + this.dictionary.translate("quit"));
-        for (String statement: this.dictionary.translationList()) {
+        for (String statement : this.dictionary.translationList()) {
             System.out.println(statement);
         }
-        while(true){
+        while (true) {
             System.out.println("Statement: ");
             String input = reader.nextLine();
-            if(this.dictionary.translate(input) == null){
+            if (this.dictionary.translate(input) == null) {
                 System.out.println("Unknown statement");
             } else {
-                if(input.equals("quit")){
-                    if(input.equals("add")){
+                if (input.equals("quit")) {
+                    if (input.equals("add")) {
                         System.out.println("In Finnish:");
                         String word = reader.nextLine();
                         System.out.println("Translation:");
                         String translation = reader.nextLine();
                         this.dictionary.add(word, translation);
-                    } if(input.equals("translate")){
+                    }
+                    if (input.equals("translate")) {
                         System.out.println("Give a word:");
                         String word = reader.nextLine();
                         System.out.println("Translation:");
                         System.out.println(this.dictionary.translate(word));
-                    }
-                    else if(input.equals("quit")){
+                    } else if (input.equals("quit")) {
                         System.out.println("Cheers!");
                         break;
                     }
+                }
+            }
+        }
+    }
