@@ -1,16 +1,17 @@
 package Week9.measurements;
 
 public class ConstantSensor implements Sensor{
-    private int measuredValued;
+    private int measuredValue;
 
     public ConstantSensor(int measuredValue) {
-        this.measuredValued = measuredValue;
+        this.measuredValue = measuredValue;
     }
 
     @Override
     public int measure() {
-        return this.measuredValued;
+        return this.measuredValue;
     }
+
     @Override
     public boolean isOn() {
         return true;
@@ -18,13 +19,11 @@ public class ConstantSensor implements Sensor{
 
     @Override
     public void on() {
-    //do not do anything
+        // do not do anything
     }
 
     @Override
-    public void off() throws IllegalAccessException {
-
+    public void off() {
+        // do not do anything
     }
-
-
 }
