@@ -1,4 +1,4 @@
-package Week9.moving.domain;
+package Week9;
 
 import Week9.moving.domain.Item;
 import Week9.moving.domain.Thing;
