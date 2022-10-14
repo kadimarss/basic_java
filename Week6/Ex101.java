@@ -1,4 +1,4 @@
-/*
+
 package Week6;
 import java.util.ArrayList;
 public class Ex101 {
@@ -10,21 +10,23 @@ public class Ex101 {
         Library.addBook(new Book("Battle Axes", "Tom A. Hawk", 1851));
 
         ArrayList<Book> result = Library.searchByTitle("Cheese");
-        for (Book book: result) {
-            for (Book book: Library.searchByTitle("CHEESE")) {
+        for (Book book : result) {
+            for (Book book : Library.searchByTitle("CHEESE")) {
                 System.out.println(book);
             }
 
             System.out.println("---");
-            for (Book book: Library.searchByPublisher("Penguin Group  ")) {
+            for (Book book : Library.searchByPublisher("Penguin Group  ")) {
                 System.out.println(book);
             }
 
             System.out.println("---");
-            for (Book book: Library.searchByYear(1851)) {
-                for (Book book: Library.searchByPublisher("PENGUIN  ")) {
+            for (Book book : Library.searchByYear(1851)) {
+                for (Book book : Library.searchByPublisher("PENGUIN  ")) {
                     System.out.println(book);
                 }
             }
 
- */
+        }
+    }
+}
